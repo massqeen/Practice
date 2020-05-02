@@ -13,15 +13,32 @@ body {
   color: var(--text-color);
 }
 
+.visually-hidden {
+  /* Удаляем элемент из потока документа */
+  position: absolute;
+  /* Временное решение для неверно произносимого, размазанного текста */
+  white-space: nowrap;
+  /* Устанавливаем минимально возможный размер (некоторые скринридеры игнорируют элементы с нулевой высотой и шириной) */
+  width: 1px;
+  height: 1px;
+  /* Скрываем вылезающий за границы контент */
+  overflow: hidden;
+  /* Сбрасываем любые свойства, которые могут повлиять на размер элемента */
+  border: 0;
+  padding: 0;
+  /* Вырезаем ту часть контента, которая должна отображаться. */
+  /* Устаревшее свойство clip для старых браузеров */
+  clip: rect(0 0 0 0);
+  /* clip-path для новых браузеров. inset(50%) определяет область вставки, которая позволит контенту исчезнуть.  */
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  /* Похоже, никто до конца не понимает, почему тут margin: -1px. Кроме того, это приводит к проблемам (читай: https://github.com/h5bp/html5-boilerplate/issues/1985). */
+  margin: 0;
+}
+
 .container {
   width: 1140px;
   margin: 0 auto;
-}
-
-.clearfix::after {
-  content: '';
-  display: table;
-  clear: both;
 }
 
 .sections {
@@ -39,24 +56,24 @@ body {
 
 .navigation {
   margin-bottom: 250px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo {
   font-size: 24px;
   line-height: 36px;
   font-weight: 700;
-  float: left;
   color: #fff;
   padding: 10px 0;
 }
 
 .navigation__list {
-  float: right;
+  display: flex;
   padding-top: 18px;
 }
 
 .navigation__list-item {
-  float: left;
   margin-right: 32px;
 }
 
@@ -141,9 +158,12 @@ body {
   padding-bottom: 98px;
 }
 
+.services__list {
+  display: flex;
+}
+
 .services__list-item {
   width: 346px;
-  float: left;
   text-align: center;
 }
 
@@ -193,6 +213,8 @@ body {
 
 .about__text-wrapper {
   margin-bottom: 38px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .about__text {
@@ -200,21 +222,13 @@ body {
   width: 556px;
 }
 
-.about__text:first-child {
-  float: left;
-}
-
-.about__text:last-child {
-  float: right;
-}
-
 .about__slider-wrapper {
   position: relative;
+  display: flex;
 }
 
 .about__slider-item {
   width: 263px;
-  float: left;
   text-align: center;
 }
 
@@ -250,10 +264,7 @@ body {
   left: 50%;
   bottom: 32px;
   transform: translateX(-50%);
-}
-
-.overlay__list-item {
-  float: left;
+  display: flex;
 }
 
 .overlay__list-link {
@@ -320,27 +331,4 @@ body {
 
 .inactive-btn {
   background-color: rgba(85, 85, 85, 0.2);
-}
-
-.visually-hidden {
-  /* Удаляем элемент из потока документа */
-  position: absolute;
-  /* Временное решение для неверно произносимого, размазанного текста */
-  white-space: nowrap;
-  /* Устанавливаем минимально возможный размер (некоторые скринридеры игнорируют элементы с нулевой высотой и шириной) */
-  width: 1px;
-  height: 1px;
-  /* Скрываем вылезающий за границы контент */
-  overflow: hidden;
-  /* Сбрасываем любые свойства, которые могут повлиять на размер элемента */
-  border: 0;
-  padding: 0;
-  /* Вырезаем ту часть контента, которая должна отображаться. */
-  /* Устаревшее свойство clip для старых браузеров */
-  clip: rect(0 0 0 0);
-  /* clip-path для новых браузеров. inset(50%) определяет область вставки, которая позволит контенту исчезнуть.  */
-  -webkit-clip-path: inset(50%);
-  clip-path: inset(50%);
-  /* Похоже, никто до конца не понимает, почему тут margin: -1px. Кроме того, это приводит к проблемам (читай: https://github.com/h5bp/html5-boilerplate/issues/1985). */
-  margin: 0;
 }
