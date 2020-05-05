@@ -98,7 +98,7 @@ body {
   content: '';
   height: 3px;
   background-color: var(--accent-color);
-  transition: width 250ms ease-in-out;
+  transition: width 250ms ease-in-out, visibility 250ms ease-in-out;
   visibility: hidden;
 }
 
