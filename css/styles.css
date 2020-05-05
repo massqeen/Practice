@@ -266,7 +266,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.5;
+  opacity: 0;
   visibility: hidden;
   border: 5px solid rgba(255, 255, 255, 0.5);
   background-clip: padding-box;
@@ -289,11 +289,10 @@ body {
   left: 50%;
   bottom: 32px;
   transform: translateX(-50%);
-  /* display: flex; */
-  display: none;
+  display: flex;
 }
 
-/* .overlay__list-item {
+/.overlay__list-item {
   opacity: 0;
   transition: opacity 1000ms ease-in-out;
 }
@@ -325,7 +324,7 @@ body {
 
 .overlay__list-link:hover {
   background-color: var(--accent-color);
-} */
+}
 
 .about__slider-item-name {
   text-transform: uppercase;
