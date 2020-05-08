@@ -552,9 +552,13 @@ body {
   font-family: var(--font-family);
   font-size: 12px;
   line-height: 20px;
+  position: relative;
 }
 
 .contact__form-btn-description::before {
-  content: '* ';
+  content: '\2217';
+  position: absolute;
+  top: -5px;
+  left: -8px;
   color: var(--accent-color);
 }
