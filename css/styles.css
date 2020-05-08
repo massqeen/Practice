@@ -1,3 +1,55 @@
+/* montserrat-regular - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+    url('../fonts/montserrat-v14-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../fonts/montserrat-v14-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-500 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Montserrat Medium'), local('Montserrat-Medium'),
+    url('../fonts/montserrat-v14-latin-500.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../fonts/montserrat-v14-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-600 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+    url('../fonts/montserrat-v14-latin-600.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../fonts/montserrat-v14-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+    url('../fonts/montserrat-v14-latin-700.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../fonts/montserrat-v14-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* roboto-slab-regular - latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('../fonts/roboto-slab-v11-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../fonts/roboto-slab-v11-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 :root {
   --accent-color: rgb(192, 48, 28);
   --text-color: #555;
@@ -37,7 +89,7 @@ body {
 }
 
 .container {
-  width: 1140px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
@@ -161,7 +213,7 @@ body {
   content: '';
   width: 50px;
   height: 2px;
-  background-color: #555555;
+  background-color: var(--text-color);
   margin: 0 auto;
   margin-top: 28px;
 }
@@ -270,14 +322,14 @@ body {
   visibility: hidden;
   border: 5px solid rgba(255, 255, 255, 0.5);
   background-clip: padding-box;
-  transition: opacity 1000ms ease-in-out, visibility 1000ms ease-in-out;
+  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
 }
 
-/* .about__slider-item:hover .overlay,
+.about__slider-item:hover .overlay,
 .about__slider-item:hover .overlay__list-item {
   opacity: 1;
   visibility: visible;
-} */
+}
 
 .about__slider-item:hover .overlay {
   opacity: 1;
@@ -292,9 +344,9 @@ body {
   display: flex;
 }
 
-/.overlay__list-item {
+.overlay__list-item {
   opacity: 0;
-  transition: opacity 1000ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
 }
 
 .overlay__list-link {
@@ -303,7 +355,7 @@ body {
   height: 28px;
   background-repeat: no-repeat;
   background-position: center;
-  transition: background-color 250ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
 }
 
 .overlay__list-link-facebook {
@@ -362,4 +414,147 @@ body {
 
 .inactive-btn {
   background-color: rgba(85, 85, 85, 0.2);
+}
+
+/* CONTACT */
+.contact__content-left-side {
+  font-style: normal;
+}
+
+.contact__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact__list-item {
+  padding-left: 26px;
+  background-position-y: 2px;
+  background-repeat: no-repeat;
+}
+
+.contact__list-item:not(:last-child) {
+  margin-bottom: 28px;
+}
+
+.contact__list-item_geo {
+  background-image: url('../images/contact/geo.png');
+}
+
+.contact__list-item_phone {
+  background-image: url('../images/contact/phone.png');
+}
+
+.contact__list-item_email {
+  background-image: url('../images/contact/email.png');
+  background-position-y: 6px;
+}
+
+.contact__list-item-title {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.contact__list-item-link {
+  font-family: var(--font-family);
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--text-color);
+  display: inline-block;
+}
+
+.contact__list-item-link_br {
+  display: block;
+}
+
+.contact__list {
+  width: 236px;
+}
+
+.contact__form {
+  width: 732px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact__form-input,
+.contact__form-message {
+  border: 1px solid rgb(85, 85, 85);
+  font-family: var(--font-family);
+  font-size: 12px;
+  line-height: 20px;
+  padding-left: 18px;
+  margin-bottom: 22px;
+}
+
+.contact__form-input::placeholder,
+.contact__form-message::placeholder {
+  text-transform: uppercase;
+}
+
+.contact__form-input {
+  flex-basis: 350px;
+  height: 42px;
+}
+
+.contact__form-input:focus,
+.contact__form-message:focus {
+  outline: none;
+}
+
+.contact__form-input:required:focus:valid:not(:placeholder-shown),
+.contact__form-message:required:focus:valid:not(:placeholder-shown) {
+  border-color: #00ff00;
+}
+
+.contact__form-input:required:focus:invalid:not(:placeholder-shown),
+.contact__form-message:required:focus:invalid:not(:placeholder-shown) {
+  border-color: var(--accent-color);
+}
+
+.contact__form-message {
+  width: 100%;
+  height: 102px;
+  resize: none;
+  padding-top: 12px;
+}
+
+.contact__form-btn-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.contact__form-btn {
+  font-family: var(--font-family);
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.6px;
+  width: 168px;
+  height: 42px;
+  border: 1px solid rgb(85, 85, 85);
+  text-transform: uppercase;
+  color: var(--text-color);
+  background-color: #fff;
+  margin-right: 40px;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+.contact__form-btn:hover,
+.contact__form-btn:focus {
+  color: #fff;
+  background-color: var(--accent-color);
+}
+
+.contact__form-btn-description {
+  font-family: var(--font-family);
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.contact__form-btn-description::before {
+  content: '* ';
+  color: var(--accent-color);
 }
