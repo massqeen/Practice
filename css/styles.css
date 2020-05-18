@@ -436,15 +436,15 @@ body {
   margin-bottom: 28px;
 }
 
-.contact__list-item_geo {
+.contact__list-item-geo {
   background-image: url('../images/contact/geo.png');
 }
 
-.contact__list-item_phone {
+.contact__list-item-phone {
   background-image: url('../images/contact/phone.png');
 }
 
-.contact__list-item_email {
+.contact__list-item-email {
   background-image: url('../images/contact/email.png');
   background-position-y: 6px;
 }
@@ -464,7 +464,7 @@ body {
   display: inline-block;
 }
 
-.contact__list-item-link_br {
+.contact__list-item-link-br {
   display: block;
 }
 
