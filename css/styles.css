@@ -106,6 +106,13 @@ body {
   padding: 28px 0 258px 0;
 }
 
+@media (min-resolution: 192dpi) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+      url('../images/header/bg@2x.jpg');
+  }
+}
+
 .navigation {
   margin-bottom: 250px;
   display: flex;
@@ -263,7 +270,13 @@ body {
   margin-bottom: 26px;
 }
 
-.services__list-item:nth-child(1)::before {
+.services-icon {
+  width: 48px;
+  height: 48px;
+  fill: var(--accent-color);
+}
+
+/* .services__list-item:nth-child(1)::before {
   background-image: url('../images/services/font.png');
 }
 
@@ -273,7 +286,7 @@ body {
 
 .services__list-item:nth-child(3)::before {
   background-image: url('../images/services/support.png');
-}
+} */
 
 .services__list-item-description {
   font-family: var(--font-family);
@@ -359,19 +372,19 @@ body {
 }
 
 .overlay__list-link-facebook {
-  background-image: url('../images/about/facebook.png');
+  background-image: url('../images/about/facebook.svg');
 }
 
 .overlay__list-link-twitter {
-  background-image: url('../images/about/twitter.png');
+  background-image: url('../images/about/twitter.svg');
 }
 
 .overlay__list-link-google-plus {
-  background-image: url('../images/about/google-plus.png');
+  background-image: url('../images/about/google-plus.svg');
 }
 
 .overlay__list-link-linkedin {
-  background-image: url('../images/about/inkedin.png');
+  background-image: url('../images/about/linkedin.svg');
 }
 
 .overlay__list-link:hover {
@@ -404,12 +417,12 @@ body {
 
 .prev {
   left: 0;
-  background-image: url('../images/about/prev.png');
+  background-image: url('../images/about/prev.svg');
 }
 
 .next {
   right: 0;
-  background-image: url('../images/about/next.png');
+  background-image: url('../images/about/next.svg');
 }
 
 .inactive-btn {
